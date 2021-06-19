@@ -1,0 +1,18 @@
+// Data source
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:root@localhost:3306/qh"
+}
+
+// Generator
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Data model
+model Ban {
+  id Int @id
+  name1 String 
+  name2 String
+  date DateTime
+}
