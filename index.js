@@ -1,8 +1,10 @@
 const { PrismaClient, DateTimeFilter  } = require('@prisma/client')
 const Koa = require('koa');
+const cors = require('koa2-cors');
 
 const prisma = new PrismaClient()
 const app = new Koa();
+app.use(cors())
 
 function bl(num) {
   if (num < 10) {
@@ -20,4 +22,4 @@ app.use(async ctx => {
   ctx.body = await getPeople();
 });
 
-app.listen(3000);
+app.listen(3001);
